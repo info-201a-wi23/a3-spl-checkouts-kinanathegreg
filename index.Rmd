@@ -1,86 +1,96 @@
----
+--
 title: "A3: SPL Library Checkouts"
 output: html_document
 ---
 
 ### Introduction
-
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+I chose to use the 2013-2023-5-Checkouts-SPL dataset, and then filter through to
+find all the checkouts of all Harry Potter series books, written by J. K.
+Rowling. I love the Harry Potter series, and my family started listening to the
+Harry Potter audiobooks during the summer of 2020, so I thought I could really
+personally connect to this data. I was also particularly curious at the trend in
+audiobook, ebook, and regular book checkouts and how they compare over the past
+ten years.
 
 ### Summary Information
-
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
+I found some really interesting aspects of this data! First off, I calculated
+which year had the most amount of checkouts, what type of book it was, and how
+many checkouts there were. In April of 2020, there were 1,894 checkouts of a Harry Potter
+audiobook! From there, I wanted to see what percentage of checkouts were
+audiobook, ebook, and regular book. Approximately 53.6% of checkouts over the
+past ten years were audiobooks, 25% were regular books, and 21.3% were ebook.
+The year with the least amount of regular book checkouts was
 
 ### The Dataset
+The Seattle Public Library collected and published this data from what I can
+tell. For the data I chose to use, the dates included were the year and month,
+from January 2013 to January 2023. The kinds of books included audiobooks,
+ebooks, and regular books, but the data overall included all varied kinds of
+objects you can checkout from a library (movies, chargers, etc.). It also gave
+you general subjects within each item, with tags such as "juvenile fiction,
+wizards", and other words that could be used to further subdivide the data. The
+data was collected to give the general public access to data that isn't usually
+accessible. Most libraries don't offer this kind of data. Some ethical questions
+we should consider when working with this data is am I using this data in a way
+that is helpful to others? Another question that I don't think can be answered
+is if there was any personal information also collected with each checkout. It's
+an ethical question for the library: how much personal information is collected
+when this data is collected? Some possible limitations with this data is that
+there is no date, and some books have different titles despite ultimately being
+the same book. For example, Harry Potter and the Sorcerer's Stone is listed as
+a different book than "Harry Potter and the Sorcerer's Stone: Harry Potter
+Series, Book 1", which is ultimately the same book just with different phrasing
+of the title. I also have no way to measure how accurate or reliable this data
+is.
 
-- Who collected/published the data?  
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
-- Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
-- What are possible limitations or problems with this data?   (at least 200 words)
-
-
-### First Trends Over Time Chart
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
+### Graphic 1: Scatter Line Plot
+I included this chart because I think it offers a great visual comparison
+between the audiobook and other material types trends. You can see an incredible
+spike in audiobooks the year that COVID hit. (I'm not implying causation but I
+do think there is probably a correlation between the two.) If we look at trends
+besides that one random spike in audiobooks, both ebooks and audiobooks have
+been consistently vying for public popularity since about 2016. It makes me
+wonder when the Nook, Kindle, or iPad became popular, as those are the main
+technology you'd use when reading an ebook. There looks to be a consistent
+number of book checkouts, though it's on average lower than that of ebook or
+audiobook.
 
 ``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
 ```
 
-### Second Trends Over Time Chart
+### Graphic 2: Pie Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
+I included this graphic after the first because I truly believe it's a great way
+visual in understanding just how significant audiobooks have become. An
+astounding 53.6% of Harry Potter books that were checked out were audiobooks!
+If you think about it, audiobooks are a great way to multitask. You can listen
+while doing busybody jobs like cooking, cleaning, sitting around, drawing, etc.
+Then again, this data could have also been skewed by that one spike that we saw
+in the first graphic in April of 2020. I think that checkout must have been for
+a school district's online English curriculum. However, compared to the first
+chart, I think this pie chart offers fresh insight. In the first chart, I
+believed that ebooks overall had a greater number of checkouts over the years,
+but with this pie chart visual you can see that books actually had a higher
+percentage of checkouts over the years. This could mean one of two things: one,
+while ebooks have been on the rise, books still have a consistent amount of
+subscribers, or two, ebooks became popular around 2016-2017, and books simply
+have more years of data for regular customers than ebooks do.
 
 ``````{r, echo = FALSE, code = readLines("chart2_example.R")}
 ```
 
-### Your Choice
+### Graphic 3: Scatter Line Plot
+I included this simple graphic because of the first two graphics. I wanted to
+see, on its own, the audiobook trends to determine if the numbers have truly
+been on the rise or if there was some kind of skewed number. With this chart
+we can see much more clearly that there was a dramatic spike in 2020 (when
+COVID hit), and then the trend has been generally lowered back down to normal
+after 2020. I think for future analysis, I would like to compare a giant graph
+of a monthly record of checkouts between audiobook, ebook, and book. I would
+also love to analyze each of the books within the Harry Potter series and which
+of them were each of the three material types.
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+``````{r, echo = FALSE, code = readLines("chart3_example.R")}
 ```
 
 
