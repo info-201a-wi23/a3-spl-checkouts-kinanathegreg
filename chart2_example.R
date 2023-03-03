@@ -28,22 +28,27 @@ audiobook_checkouts <- hp_df %>%
   filter(MaterialType == "AUDIOBOOK") %>%
   summarize(Checkouts = sum(Checkouts, na.rm = TRUE)) %>%
   pull(Checkouts)
+
 ebook_checkouts <- hp_df %>%
   select(MaterialType, Checkouts) %>%
   filter(MaterialType == "EBOOK") %>%
   summarize(Checkouts = sum(Checkouts, na.rm = TRUE)) %>%
   pull(Checkouts)
+
 book_checkouts <- hp_df %>%
   select(MaterialType, Checkouts) %>%
   filter(MaterialType == "BOOK") %>%
   summarize(Checkouts = sum(Checkouts, na.rm = TRUE)) %>%
   pull(Checkouts)
+
 all_checkouts <- hp_df %>%
   summarize(Checkouts = sum(Checkouts, na.rm = TRUE)) %>%
   pull(Checkouts)
+
 audiobook_percent <- (audiobook_checkouts / all_checkouts) * 100
 ebook_percent <- (ebook_checkouts / all_checkouts) * 100
 book_percent <- (book_checkouts / all_checkouts) * 100
+
 material_types_df <- data.frame(
   types = c("AUDIOBOOK", "EBOOK", "BOOK"),
   pie_chart_values = c(53.61835, 21.3229, 25.05875)
@@ -59,7 +64,7 @@ ggplot(material_types_df, aes(x = "",
   theme_void() +
   geom_text(aes(label = paste0(pie_chart_values, "%")),
             position = position_stack(vjust=0.5)) +
-  labs(title = "Percentages of Audiobook vs. Ebook vs. Book Checkouts
-              from Jan. 2013 to Jan. 2023",
+  labs(title = "Percentages of Harry Potter Audiobook vs. Ebook vs. Book
+              Checkouts from Jan. 2013 to Jan. 2023",
        fill = "Material Type")
 

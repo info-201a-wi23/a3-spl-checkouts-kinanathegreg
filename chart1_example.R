@@ -1,4 +1,4 @@
-# Load relevant librarie
+# Load relevant libraries
 library(dplyr)
 library(ggplot2)
 library(scales)
@@ -33,8 +33,8 @@ ggplot(data = hp_df) +
                           y = Checkouts,
                           color = MaterialType)
             ) +
-  labs(title = "Ebook vs. Audiobook vs. Book Checkouts
-       from Jan. 2013 - Jan. 2023",
+  labs(title = "Harry Potter Audiobook vs. Ebook vs. Book Checkouts
+                       from Jan. 2013 - Jan. 2023",
        x = "Year",
        y = "Number of Checkouts",
        color = "Material Type") +

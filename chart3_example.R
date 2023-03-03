@@ -36,7 +36,7 @@ ggplot(data = audiobook_data) +
   geom_point(mapping = aes(x = CheckoutYear,
                            y = Checkouts,
                            color = MaterialType)) +
-  labs(title = "Audiobook Checkouts from Jan. 2013 - Jan. 2023",
+  labs(title = "Harry Potter Audiobook Checkouts from Jan. 2013 - Jan. 2023",
        x = "Year",
        y = "Number of Checkouts",
        color = "Material Type") +
